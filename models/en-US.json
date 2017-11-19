@@ -1,0 +1,48 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "space facts",
+        "intents": [
+          {
+            "intent": "startGameIntent",
+            "samples": [
+              "start game",
+              "let's play",
+              "start game of mastermind"
+            ]
+          },
+          {
+            "slots": [
+              {
+                "name": "COLORONE",
+                "type": "COLORS"
+              },
+              {
+                "name": "COLORTWO",
+                "type": "COLORS"
+              },
+              {
+                "name": "COLORTHREE",
+                "type": "COLORS"
+              },
+              {
+                "name": "COLORFOUR",
+                "type": "COLORS"
+              }
+            ],
+            "intent": "userAnswerIntent",
+            "samples": "{COLORONE} {COLORTWO} {COLORTHREE} {COLORFOUR}"
+          },
+          {
+            "intent": "AMAZON.CancelIntent"
+          },
+          {
+            "intent": "AMAZON.StopIntent"
+          },
+          {
+            "intent": "AMAZON.HelpIntent"
+          }
+       ]
+    }
+  }
+}
