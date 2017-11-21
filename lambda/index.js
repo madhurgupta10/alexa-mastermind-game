@@ -25,21 +25,21 @@ console.log(secretPatternList);
 var count = 0;
 var trueAnswer = [ 1, 1, 1, 1 ];
 
-function generatePattern() {
-    var myList = ["red", "yellow", "blue", "orange", "purple", "white", "black", "green"];
+// function generatePattern() {
+//     var myList = ["red", "yellow", "blue", "orange", "purple", "white", "black", "green"];
 
-    var secretPatternList = [
-            myList[Math.floor(Math.random()* myList.length)],
-            myList[Math.floor(Math.random()* myList.length)],
-            myList[Math.floor(Math.random()* myList.length)],
-            myList[Math.floor(Math.random()* myList.length)]
-        ];
+//     var secretPatternList = [
+//             myList[Math.floor(Math.random()* myList.length)],
+//             myList[Math.floor(Math.random()* myList.length)],
+//             myList[Math.floor(Math.random()* myList.length)],
+//             myList[Math.floor(Math.random()* myList.length)]
+//         ];
 
-    console.log(secretPatternList);
+//     console.log(secretPatternList);
 
-    var count = 0;
-    var trueAnswer = [ 1, 1, 1, 1 ];
-}
+//     var count = 0;
+//     var trueAnswer = [ 1, 1, 1, 1 ];
+// }
 var handlers = {
     'LaunchRequest': function() {
         this.emit('startGameIntent');
@@ -47,7 +47,7 @@ var handlers = {
 
     'startGameIntent': function() {
         console.log(secretPatternList);   
-        generatePattern();
+        // generatePattern();
         var reprompt = "Try saying 4 colors like red, yellow, blue, red,";
         this.emit(':ask', "Hi Welcome to this game of mastermind. If you dont know about the rules of this game just say, Help and I will help you out with rules. Lets get started. Tell me your first pattern", reprompt);
     },
@@ -94,46 +94,46 @@ var handlers = {
 }
 
 function mine(userAnswerList) {
-            var ans = [ 0, 0, 0, 0 ];
-            console.log(userAnswerList);
+    var ans = [ 0, 0, 0, 0 ];
+    console.log(userAnswerList);
 
-            // for (var j = 0; j < myList.length; j++) {
-            //     if (myList.indexOf(userAnswerList[j]) < 0) {
-            //         var negative = true;
-            //         break;
-            //     }
-            //     else {
-            //         var negative = false;
-            //     }
-            // }
+// for (var j = 0; j < myList.length; j++) {
+//     if (myList.indexOf(userAnswerList[j]) < 0) {
+//         var negative = true;
+//         break;
+//     }
+//     else {
+//         var negative = false;
+//     }
+// }
 
-        //    try {
-                for (var i = 0; i < 4; i++) {
-                    if (secretPatternList[i] == userAnswerList[i]) {
-                        ans[i] = 1;
-                    }
-                }
-                var ansString = ""+ans[0]+", "+ans[1]+", "+ans[2]+", "+ans[3];
-                console.log(ans);
-                if (String(ans) == String(trueAnswer)) {
-                    var answerResponse = "You got it, your number of trials to guess the correct pattern are "+count+". To play again say, start game, or, exit to stop game.";
-                    var reprompt = "Try saying start game, to play again"
-                    count = 0;
-                    secretPatternList = [
-                    myList[Math.floor(Math.random()* myList.length)],
-                    myList[Math.floor(Math.random()* myList.length)],
-                    myList[Math.floor(Math.random()* myList.length)],
-                    myList[Math.floor(Math.random()* myList.length)]
-                ];
-                }
-                else {
-                    var answerResponse = ansString+". try again";
-                    var reprompt = "Try saying 4 colors like red, yellow, blue, red,";
-                }
-                count++;
-                return [answerResponse, reprompt];
-            // }
-            // finally {
-            //     return "Your response is invalid, please try choosing four colors from names from red, yellow, green, blue, orange, purple, white and black."
-            // }
+//try {
+    for (var i = 0; i < 4; i++) {
+        if (secretPatternList[i] == userAnswerList[i]) {
+            ans[i] = 1;
+        }
+    }
+    var ansString = ""+ans[0]+", "+ans[1]+", "+ans[2]+", "+ans[3];
+    console.log(ans);
+    if (String(ans) == String(trueAnswer)) {
+        var answerResponse = "You got it, your number of trials to guess the correct pattern are "+count+". To play again say, start game, or, exit to stop game.";
+        var reprompt = "Try saying start game, to play again"
+        count = 0;
+        secretPatternList = [
+        myList[Math.floor(Math.random()* myList.length)],
+        myList[Math.floor(Math.random()* myList.length)],
+        myList[Math.floor(Math.random()* myList.length)],
+        myList[Math.floor(Math.random()* myList.length)]
+    ];
+    }
+    else {
+        var answerResponse = ansString+". try again";
+        var reprompt = "Try saying 4 colors like red, yellow, blue, red,";
+    }
+    count++;
+    return [answerResponse, reprompt];
+// }
+// finally {
+//     return "Your response is invalid, please try choosing four colors from names from red, yellow, green, blue, orange, purple, white and black."
+// }
 }
