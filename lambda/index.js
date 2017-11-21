@@ -48,7 +48,8 @@ var handlers = {
     'startGameIntent': function() {
         console.log(secretPatternList);   
         generatePattern();
-        this.emit(':ask', "Hi Welcome to this game of mastermind. If you dont know about the rules of this game just say, Help and I will help you out with rules. Lets get started. Tell me your first pattern");
+        var reprompt = "Try saying 4 colors like red, yellow, blue, red,";
+        this.emit(':ask', "Hi Welcome to this game of mastermind. If you dont know about the rules of this game just say, Help and I will help you out with rules. Lets get started. Tell me your first pattern", reprompt);
     },
 
     'userAnswerIntent': function() {
@@ -69,8 +70,9 @@ var handlers = {
 
             var userAnswerList = userAnswer.split(" ");
             var sp = mine(userAnswerList);
-            this.response.speak(""+sp).listen("");
-            this.emit(':responseReady');
+            //this.response.speak(""+sp).listen("think of a new pattern and try again");
+            this.emit(":ask", sp[0], sp[1]);
+            //this.emit(':responseReady');
     },
 
     'AMAZON.HelpIntent': function() {
@@ -115,6 +117,7 @@ function mine(userAnswerList) {
                 console.log(ans);
                 if (String(ans) == String(trueAnswer)) {
                     var answerResponse = "You got it, your number of trials to guess the correct pattern are "+count+". To play again say, start game, or, exit to stop game.";
+                    var reprompt = "Try saying start game, to play again"
                     count = 0;
                     secretPatternList = [
                     myList[Math.floor(Math.random()* myList.length)],
@@ -124,10 +127,11 @@ function mine(userAnswerList) {
                 ];
                 }
                 else {
-                    var answerResponse = ansString;
+                    var answerResponse = ansString+". try again";
+                    var reprompt = "Try saying 4 colors like red, yellow, blue, red,";
                 }
                 count++;
-                return answerResponse;
+                return [answerResponse, reprompt];
             // }
             // finally {
             //     return "Your response is invalid, please try choosing four colors from names from red, yellow, green, blue, orange, purple, white and black."
