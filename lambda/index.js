@@ -76,7 +76,7 @@ var handlers = {
     },
 
     'AMAZON.HelpIntent': function() {
-        var speechOutput = "In the game of mastermind you need to guess my four color secret pattern by saying any four color names from red, yellow, green, blue, orange, purple, white and black. Please note that there can be identical colors in the pattern. For each of your four responses I will tell you a number which is either zero or one, where one means your response is correct at the correct position and zero which means your response is in correct. For example if the secret pattern is red, yellow, blue, red, and you say red, white, blue, red, I will say 1, 0, 1, 1,. The goal here is to minimize the number of trials to guess the correct pattern. If you are playing for the first time then grabbing a pen and a paper will be handy.";
+        var speechOutput = "In the game of mastermind you need to guess my four color secret pattern by saying any four color names from red, yellow, green, blue, orange, purple, white and black. Please note that there can be identical colors in the pattern. For each of your four responses I will tell you a number which is either zero or one, where one means your response is correct at the correct position and zero which means your response is incorrect. For example if the secret pattern is red, yellow, blue, red, and you say red, white, blue, red, I will say 1, 0, 1, 1,. The goal here is to minimize the number of trials to guess the correct pattern. If you are playing for the first time then grabbing a pen and a paper will be handy.";
         var reprompt = "Try saying 4 colors like red, yellow, blue, red,";
         this.emit(":ask", speechOutput, reprompt);
         
