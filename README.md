@@ -1,6 +1,6 @@
 # alexa-mastermind-game
 
-_created by madhurgupta10_
+_created by @madhurgupta10_
 
 # Testing Instructions
 Simply say "Alexa, ask Mastermind Game to start game." then alexa will read out the welcome message. 
