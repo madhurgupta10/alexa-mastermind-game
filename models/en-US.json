@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "space facts",
+      "invocationName": "mastermind game",
         "intents": [
           {
             "intent": "startGameIntent",
