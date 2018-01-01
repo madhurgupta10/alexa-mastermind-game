@@ -1,6 +1,11 @@
-# alexa-mastermind-game
+# Alexa Mastermind Game
 
 _created by @madhurgupta10_
+
+# Link
+[US](http://amzn.to/2CvXLxb)
+[UK](http://amzn.to/2ClAPUE)
+[IN](https://www.amazon.in)
 
 # Testing Instructions
 Simply say "Alexa, ask Mastermind Game to start game." then alexa will read out the welcome message. 
