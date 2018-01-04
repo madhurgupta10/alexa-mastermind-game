@@ -9,6 +9,8 @@ _created by @madhurgupta10_
 
 [IN](https://www.amazon.in)
 
+[CA](https://www.amazon.ca)
+
 # Testing Instructions
 Simply say "Alexa, ask Mastermind Game to start game." then alexa will read out the welcome message. 
 
