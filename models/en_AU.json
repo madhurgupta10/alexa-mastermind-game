@@ -1,0 +1,52 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mastermind game",
+        "intents": [
+          {
+            "intent": "startGameIntent",
+            "samples": [
+              "start game",
+              "let 's play",
+              "play with me",
+              "let 's play a game now",
+              "let 's play a game of mastermind",
+              "start a game of mastermind",
+              "to play with me"
+            ]
+          },
+          {
+            "slots": [
+              {
+                "name": "COLORONE",
+                "type": "COLORS"
+              },
+              {
+                "name": "COLORTWO",
+                "type": "COLORS"
+              },
+              {
+                "name": "COLORTHREE",
+                "type": "COLORS"
+              },
+              {
+                "name": "COLORFOUR",
+                "type": "COLORS"
+              }
+            ],
+            "intent": "userAnswerIntent",
+            "samples": "{COLORONE} {COLORTWO} {COLORTHREE} {COLORFOUR}"
+          },
+          {
+            "intent": "AMAZON.CancelIntent"
+          },
+          {
+            "intent": "AMAZON.StopIntent"
+          },
+          {
+            "intent": "AMAZON.HelpIntent"
+          }
+       ]
+    }
+  }
+}
