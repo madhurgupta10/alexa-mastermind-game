@@ -11,6 +11,8 @@ _created by @madhurgupta10_
 
 [CA](http://amzn.to/2lRRu78)
 
+[AU](https://www.amazon.com.au/)
+
 # Testing Instructions
 Simply say "Alexa, ask Mastermind Game to start game." then alexa will read out the welcome message. 
 
